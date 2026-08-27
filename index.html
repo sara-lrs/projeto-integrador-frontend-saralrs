@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CineCrítica - Lançamentos e Avaliações</title>
 </head>
- <body style="background-color: #1a1a1a; color: #ffffff; font-family: Arial, sans-serif; padding: 20px;">
+<body style="background-color: #141414; color: #ffffff; font-family: Arial, sans-serif; margin: 0; padding: 0;">
 
-   <header style="text-align: center;">
-    <h1>CineCrítica</h1>
-</header>
+    <!-- Cabeçalho Principal -->
+    <header style="background-color: #000000; padding: 20px; text-align: center; border-bottom: 3px solid #e50914;">
+        <h1 style="color: #e50914; margin: 0; font-size: 32px; letter-spacing: 2px;">🎬 CineCrítica</h1>
+        <p style="color: #aaaaaa; margin-top: 5px;">Sua plataforma de análises e novidades do cinema</p>
+    </header>
 
-    <main>
-        <section>
-            <h2>Sobre o Projeto e Lançamentos</h2>
+    <!-- Conteúdo Principal -->
+    <main style="max-width: 900px; margin: 30px auto; padding: 0 20px;">
+
+        <!-- Seção 1: Sobre e Tabela -->
+        <section style="background-color: #1f1f1f; padding: 25px; border-radius: 8px; margin-bottom: 30px;">
+            <h2 style="color: #e50914; border-bottom: 1px solid #333; padding-bottom: 10px;">Sobre o Projeto e Lançamentos</h2>
             <p>Acompanhe análises detalhadas, coberturas de grandes premiações e as principais novidades do cinema.</p>
             
             <ul>
@@ -22,9 +27,10 @@
                 <li>Notícias e Bastidores</li>
             </ul>
 
-            <table border="1">
+            <h3 style="margin-top: 25px;">Últimas Notas da Crítica</h3>
+            <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; border-color: #333; text-align: left; background-color: #141414;">
                 <thead>
-                    <tr>
+                    <tr style="background-color: #e50914; color: #ffffff;">
                         <th>Filme</th>
                         <th>Nota da Crítica</th>
                     </tr>
@@ -32,88 +38,84 @@
                 <tbody>
                     <tr>
                         <td>Oppenheimer</td>
-                        <td>9.5 / 10</td>
+                        <td><b>9.5 / 10</b></td>
                     </tr>
                     <tr>
                         <td>Duna: Parte 2</td>
-                        <td>9.2 / 10</td>
+                        <td><b>9.2 / 10</b></td>
                     </tr>
                 </tbody>
             </table>
 
             <br>
-            <h3>Galeria de Pôsteres em Destaque</h3>
-<div style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
-    <img src="assets/images/homem-aranha.jpeg" alt="Pôster Homem-Aranha" width="200">
-    <img src="assets/images/atvd.pj2.jpg" alt="Pôster 2" width="200">
-    <img src="assets/images/atvd.pj3.jpg" alt="Pôster 3" width="200">
-    <img src="assets/images/atvd.pj4.jpg" alt="Pôster 4" width="200">
-    <img src="assets/images/atvd.pj5.jpg" alt="Pôster 5" width="200">
-</div>
+            <h3 style="margin-top: 20px;">Galeria de Pôsteres em Destaque</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 15px;">
+                <img src="assets/images/homem-aranha.jpeg" alt="Pôster Homem-Aranha" width="150" height="225" style="object-fit: cover; border-radius: 6px;">
+                <img src="assets/images/atvd.pj.jpg" alt="Pôster 2" width="150" height="225" style="object-fit: cover; border-radius: 6px;">
+                <img src="assets/images/atvd.pj3.jpg" alt="Pôster 3" width="150" height="225" style="object-fit: cover; border-radius: 6px;">
+                <img src="assets/images/atvd.pj4.jpg" alt="Pôster 4" width="150" height="225" style="object-fit: cover; border-radius: 6px;">
+                <img src="assets/images/atvd.pj5.jpg" alt="Pôster 5" width="150" height="225" style="object-fit: cover; border-radius: 6px;">
+            </div>
 
             <br><br>
-            <a href="https://www.imdb.com" target="_blank" rel="noopener noreferrer">Acesse o IMDb para conferir o banco de dados completo de filmes</a>
+            <a href="https://www.imdb.com" target="_blank" rel="noopener noreferrer" style="color: #e50914; font-weight: bold;">Acesse o IMDb para conferir o banco de dados completo de filmes &rarr;</a>
         </section>
 
-        <section>
-            <h2>Cadastre sua Avaliação de Filme</h2>
+        <!-- Seção 2: Formulário -->
+        <section style="background-color: #1f1f1f; padding: 25px; border-radius: 8px;">
+            <h2 style="color: #e50914; border-bottom: 1px solid #333; padding-bottom: 10px;">Cadastre sua Avaliação de Filme</h2>
+            
             <form action="#" method="post">
-                <fieldset>
-                    <legend>Informações da Avaliação</legend>
-
-                    <div>
-                        <label for="email-usuario">Seu E-mail:</label>
-                        <input type="email" id="email-usuario" name="email" required placeholder="seuemail@exemplo.com">
+                <fieldset style="border: 1px solid #444; border-radius: 6px; padding: 20px;">
+                    <legend style="color: #e50914; font-weight: bold; padding: 0 10px;">Informações da Avaliação</legend>
+                    
+                    <div style="margin-bottom: 15px;">
+                        <label for="email-usuario"><b>Seu E-mail:</b></label><br>
+                        <input type="email" id="email-usuario" name="email" required placeholder="seuemail@exemplo.com" style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;">
                     </div>
 
-                    <br>
-
-                    <div>
-                        <label for="data-assistido">Data em que assistiu:</label>
-                        <input type="date" id="data-assistido" name="data_assistido" required>
+                    <div style="margin-bottom: 15px;">
+                        <label for="data-assistido"><b>Data em que assistiu:</b></label><br>
+                        <input type="date" id="data-assistido" name="data_assistido" required style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;">
                     </div>
 
-                    <br>
-
-                    <div>
-                        <label for="nota-filme">Sua Nota (0 a 10):</label>
-                        <input type="number" id="nota-filme" name="nota" min="0" max="10" step="0.5" required>
+                    <div style="margin-bottom: 15px;">
+                        <label for="nota"><b>Sua Nota (0 a 10):</b></label><br>
+                        <input type="number" id="nota" name="nota" min="0" max="10" step="0.1" required placeholder="Ex: 8.5" style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;">
                     </div>
 
-                    <br>
-
-                    <div>
-                        <label for="genero-filme">Gênero do Filme:</label>
-                        <select id="genero-filme" name="genero" required>
+                    <div style="margin-bottom: 15px;">
+                        <label for="genero"><b>Gênero do Filme:</b></label><br>
+                        <select id="genero" name="genero" required style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;">
                             <option value="">Selecione um gênero</option>
                             <option value="acao">Ação</option>
                             <option value="drama">Drama</option>
-                            <option value="scifi">Ficção Científica</option>
+                            <option value="comedia">Comédia</option>
+                            <option value="ficcao">Ficção Científica</option>
                             <option value="terror">Terror</option>
                         </select>
                     </div>
 
-                    <br>
-
-                    <div>
-                        <p>Recomendaria este filme?</p>
-                        <input type="radio" id="recomenda-sim" name="recomendacao" value="sim" checked>
-                        <label for="recomenda-sim">Sim</label>
-
-                        <input type="radio" id="recomenda-nao" name="recomendacao" value="nao">
-                        <label for="recomenda-nao">Não</label>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 5px;"><b>Recomendaria este filme?</b></p>
+                        <input type="radio" id="recomendo-sim" name="recomendaria" value="sim" checked>
+                        <label for="recomendo-sim">Sim</label>&nbsp;&nbsp;
+                        <input type="radio" id="recomendo-nao" name="recomendaria" value="nao">
+                        <label for="recomendo-nao">Não</label>
                     </div>
-                </fieldset>
 
-                <br>
-                <button type="submit">Enviar Avaliação</button>
+                    <button type="submit" style="background-color: #e50914; color: #ffffff; border: none; padding: 12px 20px; font-weight: bold; border-radius: 4px; cursor: pointer; width: 100%;">Enviar Avaliação</button>
+                </fieldset>
             </form>
         </section>
+
     </main>
 
-    <footer>
+    <!-- Rodapé -->
+    <footer style="text-align: center; padding: 20px; background-color: #000000; color: #777777; margin-top: 40px;">
         <p>&copy; 2026 CineCrítica - Todos os direitos reservados.</p>
     </footer>
 
 </body>
 </html>
+
