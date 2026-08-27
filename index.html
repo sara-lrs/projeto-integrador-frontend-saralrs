@@ -3,47 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CineCrítica - Lançamentos e Premiações</title>
+    <title>CineCrítica - Lançamentos e Avaliações</title>
 </head>
 <body>
 
-    <h1>CineCrítica</h1>
-    <p>Acompanhe análises detalhadas, coberturas de grandes premiações e as principais novidades sobre os últimos lançamentos do cinema mundial.</p>
+    <header>
+        <h1>CineCrítica</h1>
+        <button type="button" aria-label="Fechar aviso de cookies">✕</button>
+    </header>
 
-    <h2>Categorias do Site</h2>
-    <ul>
-        <li>Críticas de Lançamentos</li>
-        <li>Cobertura do Oscar e Premiações</li>
-        <li>Notícias e Bastidores</li>
-    </ul>
+    <main>
+        <section>
+            <h2>Sobre o Projeto e Lançamentos</h2>
+            <p>Acompanhe análises detalhadas, coberturas de grandes premiações e as principais novidades do cinema.</p>
+            
+            <ul>
+                <li>Críticas de Lançamentos</li>
+                <li>Cobertura do Oscar e Premiações</li>
+                <li>Notícias e Bastidores</li>
+            </ul>
 
-    <h2>Destaques da Crítica</h2>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Filme</th>
-                <th>Nota da Crítica</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Oppenheimer</td>
-                <td>9.5 / 10</td>
-            </tr>
-            <tr>
-                <td>Duna: Parte 2</td>
-                <td>9.2 / 10</td>
-            </tr>
-        </tbody>
-    </table>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Filme</th>
+                        <th>Nota da Crítica</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Oppenheimer</td>
+                        <td>9.5 / 10</td>
+                    </tr>
+                    <tr>
+                        <td>Duna: Parte 2</td>
+                        <td>9.2 / 10</td>
+                    </tr>
+                </tbody>
+            </table>
 
-    <br>
+            <br>
+            <img src="assets/images/homem-aranha.jpeg" alt="Pôster em destaque do filme Homem-Aranha" width="300">
+            <br><br>
+            <a href="https://www.imdb.com" target="_blank" rel="noopener noreferrer">Acesse o IMDb para conferir o banco de dados completo de filmes</a>
+        </section>
 
-    <img src="assets/images/homem-aranha.jpeg" alt="Pôster em destaque de um dos lançamentos de cinema" width="300">
+        <section>
+            <h2>Cadastre sua Avaliação de Filme</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Informações da Avaliação</legend>
 
-    <br><br>
+                    <div>
+                        <label for="email-usuario">Seu E-mail:</label>
+                        <input type="email" id="email-usuario" name="email" required placeholder="seuemail@exemplo.com">
+                    </div>
 
-    <a href="https://www.imdb.com" target="_blank" rel="noopener noreferrer">Acesse o IMDb para conferir o banco de dados completo de filmes</a>
+                    <br>
+
+                    <div>
+                        <label for="data-assistido">Data em que assistiu:</label>
+                        <input type="date" id="data-assistido" name="data_assistido" required>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="nota-filme">Sua Nota (0 a 10):</label>
+                        <input type="number" id="nota-filme" name="nota" min="0" max="10" step="0.5" required>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="genero-filme">Gênero do Filme:</label>
+                        <select id="genero-filme" name="genero" required>
+                            <option value="">Selecione um gênero</option>
+                            <option value="acao">Ação</option>
+                            <option value="drama">Drama</option>
+                            <option value="scifi">Ficção Científica</option>
+                            <option value="terror">Terror</option>
+                        </select>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <p>Recomendaria este filme?</p>
+                        <input type="radio" id="recomenda-sim" name="recomendacao" value="sim" checked>
+                        <label for="recomenda-sim">Sim</label>
+
+                        <input type="radio" id="recomenda-nao" name="recomendacao" value="nao">
+                        <label for="recomenda-nao">Não</label>
+                    </div>
+                </fieldset>
+
+                <br>
+                <button type="submit">Enviar Avaliação</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CineCrítica - Todos os direitos reservados.</p>
+    </footer>
 
 </body>
 </html>
