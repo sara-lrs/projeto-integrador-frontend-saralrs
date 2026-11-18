@@ -8,7 +8,6 @@ Avaliado por: Thiago Teotônio - 27/08/2026
 - Avaliação
 O projeto CineCrítica está bem organizado e cumpre bem a proposta. O JavaScript está em arquivo separado com `defer`, as funções são claras e gostei do uso de `reduce` e `filter` para as estatísticas e de `textContent` para evitar XSS.
 
-Como melhorias, sugiro mover os estilos inline para um arquivo CSS, usar textos alternativos mais descritivos nas imagens da galeria, validar a nota entre 0 e 10 também no JavaScript e ajustar os comentários que citam `.map()` e `classList`, já que o código usa `forEach` e `style`.
+- Como melhorias, sugiro mover os estilos inline para um arquivo CSS, usar textos alternativos mais descritivos nas imagens da galeria, validar a nota entre 0 e 10 também no JavaScript e ajustar os comentários que citam `.map()` e `classList`, já que o código usa `forEach` e `style`.
 Fora isso, parabéns pelo trabalho!
-
-Avaliado por: Débora Lima - 18/11/2026
+- Avaliado por: Débora Lima - 18/11/2026
