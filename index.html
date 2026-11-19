@@ -100,21 +100,35 @@
             </table>
 
             <br>
-            <h3 style="margin-top: 20px;">Galeria de Pôsteres em Destaque</h3>
-            <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 15px;">
-                <img src="assets/images/homem-aranha.jpeg" alt="Pôster Homem-Aranha" width="150" height="225" style="object-fit: cover; border-radius: 6px;">
-                <img src="assets/images/atvd.pj.jpg" alt="Pôster 2" width="150" height="225" style="object-fit: cover; border-radius: 6px;">
-                <img src="assets/images/atvd.pj3.jpg" alt="Pôster 3" width="150" height="225" style="object-fit: cover; border-radius: 6px;">
-                <img src="assets/images/atvd.pj4.jpg" alt="Pôster 4" width="150" height="225" style="object-fit: cover; border-radius: 6px;">
-                <img src="assets/images/atvd.pj5.jpg" alt="Pôster 5" width="150" height="225" style="object-fit: cover; border-radius: 6px;">
-                <img src="assets/images/odisseia.jpg" alt="Pôster A Odisseia" width="150" height="225" style="object-fit: cover; border-radius: 6px;">
-                <img src="assets/images/jogosvorazes.webp" alt="Pôster Jogos Vorazes: Amanhecer na Colheita" width="150" height="225" style="object-fit: cover; border-radius: 6px;">
-                <img src="assets/images/mario.jpg" alt="Pôster Super Mario Galaxy: O Filme" width="150" height="225" style="object-fit: cover; border-radius: 6px;">
-                <img src="assets/images/michael.jpg" alt="Pôster Michael" width="150" height="225" style="object-fit: cover; border-radius: 6px;">
-                <img src="assets/images/moana.jpg" alt="Pôster Moana" width="150" height="225" style="object-fit: cover; border-radius: 6px;">
-                <img src="assets/images/toystory.jpg" alt="Pôster Toy Story 5" width="150" height="225" style="object-fit: cover; border-radius: 6px;">
-                <img src="assets/images/heman.jpg" alt="Pôster Mestres do Universo" width="150" height="225" style="object-fit: cover; border-radius: 6px;">
-                <img src="assets/images/doom.jpg" alt="Pôster Vingadores: Doomsday" width="150" height="225" style="object-fit: cover; border-radius: 6px;">
+            <h3 style="margin-top: 20px;">Galeria de Pôsteres em Destaque (Clique em um pôster para ver o perfil)</h3>
+            <div id="galeria-filmes" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 15px;">
+                <img src="assets/images/homem-aranha.jpeg" alt="Pôster Homem-Aranha" width="150" height="225" data-titulo="Homem-Aranha" data-nota="9.0" data-categoria="Ação" data-sinopse="Acompanha a jornada de Peter Parker equilibrando a vida cotidiana com a responsabilidade de proteger a cidade como o Amigo da Vizinhança." style="object-fit: cover; border-radius: 6px; cursor: pointer;">
+                <img src="assets/images/atvd.pj.jpg" alt="Pôster Oppenheimer" width="150" height="225" data-titulo="Oppenheimer" data-nota="9.5" data-categoria="Drama Histórico" data-sinopse="A história do físico J. Robert Oppenheimer e seu papel no desenvolvimento da bomba atômica durante o Projeto Manhattan." style="object-fit: cover; border-radius: 6px; cursor: pointer;">
+                <img src="assets/images/atvd.pj3.jpg" alt="Pôster Duna: Parte 2" width="150" height="225" data-titulo="Duna: Parte 2" data-nota="9.2" data-categoria="Ficção Científica" data-sinopse="Paul Atreides se une a Chani e aos Fremen em uma jornada de vingança contra os conspiradores que destruíram sua família em Arrakis." style="object-fit: cover; border-radius: 6px; cursor: pointer;">
+                <img src="assets/images/atvd.pj4.jpg" alt="Pôster Destaque 4" width="150" height="225" data-titulo="Destaque 4" data-nota="8.4" data-categoria="Drama" data-sinopse="Produção em destaque no catálogo da CineCrítica com análise da crítica e avaliação da comunidade." style="object-fit: cover; border-radius: 6px; cursor: pointer;">
+                <img src="assets/images/atvd.pj5.jpg" alt="Pôster Destaque 5" width="150" height="225" data-titulo="Destaque 5" data-nota="8.6" data-categoria="Suspense" data-sinopse="Produção em destaque no catálogo da CineCrítica com análise da crítica e avaliação da comunidade." style="object-fit: cover; border-radius: 6px; cursor: pointer;">
+                <img src="assets/images/odisseia.jpg" alt="Pôster A Odisseia" width="150" height="225" data-titulo="A Odisseia" data-nota="9.1" data-categoria="Aventura Épica" data-sinopse="A épica jornada de retorno de Odisseu para casa após a Guerra de Troia, enfrentando mares perigosos, criaturas míticas e desafios do destino." style="object-fit: cover; border-radius: 6px; cursor: pointer;">
+                <img src="assets/images/jogosvorazes.webp" alt="Pôster Jogos Vorazes: Amanhecer na Colheita" width="150" height="225" data-titulo="Jogos Vorazes: Amanhecer na Colheita" data-nota="8.7" data-categoria="Ficção Científica" data-sinopse="Retorno ao universo de Panem para acompanhar os eventos da colheita e os bastidores tensos de uma edição marcante dos Jogos Vorazes." style="object-fit: cover; border-radius: 6px; cursor: pointer;">
+                <img src="assets/images/mario.jpg" alt="Pôster Super Mario Galaxy: O Filme" width="150" height="225" data-titulo="Super Mario Galaxy: O Filme" data-nota="8.6" data-categoria="Animação" data-sinopse="Mario e seus amigos expandem a aventura para o espaço sideral em novas galáxias cheias de desafios, planetas coloridos e ação." style="object-fit: cover; border-radius: 6px; cursor: pointer;">
+                <img src="assets/images/michael.jpg" alt="Pôster Michael" width="150" height="225" data-titulo="Michael" data-nota="8.5" data-categoria="Biografia" data-sinopse="A trajetória musical, artística e pessoal de Michael Jackson, desde o início de sua carreira até se tornar um ícone global da música pop." style="object-fit: cover; border-radius: 6px; cursor: pointer;">
+                <img src="assets/images/moana.jpg" alt="Pôster Moana" width="150" height="225" data-titulo="Moana" data-nota="8.8" data-categoria="Aventura" data-sinopse="Em versão live-action, a jovem navegadora Moana parte pelo oceano ao lado de Maui para salvar seu povo e descobrir sua verdadeira identidade." style="object-fit: cover; border-radius: 6px; cursor: pointer;">
+                <img src="assets/images/toystory.jpg" alt="Pôster Toy Story 5" width="150" height="225" data-titulo="Toy Story 5" data-nota="9.4" data-categoria="Animação" data-sinopse="Woody, Buzz e a turma encaram novos dilemas sobre amizade, pertencimento e o papel dos brinquedos em um mundo cada vez mais tecnológico." style="object-fit: cover; border-radius: 6px; cursor: pointer;">
+                <img src="assets/images/heman.jpg" alt="Pôster Mestres do Universo" width="150" height="225" data-titulo="Mestres do Universo" data-nota="8.2" data-categoria="Ação" data-sinopse="A batalha épica em Etérnia ganha vida com He-Man enfrentando forças sombrias para proteger o Castelo de Grayskull." style="object-fit: cover; border-radius: 6px; cursor: pointer;">
+                <img src="assets/images/doom.jpg" alt="Pôster Vingadores: Doomsday" width="150" height="225" data-titulo="Vingadores: Doomsday" data-nota="8.9" data-categoria="Ação" data-sinopse="Uma ameaça de proporções colossais coloca heróis e aliados diante de um conflito decisivo pelo destino do multiverso." style="object-fit: cover; border-radius: 6px; cursor: pointer;">
+            </div>
+
+            <!-- Perfil Clicável do Filme Selecionado (Capa + Sinopse) -->
+            <div id="perfil-filme" style="display: none; margin-top: 25px; padding: 20px; background-color: #141414; border: 1px solid #e50914; border-radius: 8px;">
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start;">
+                    <img id="perfil-capa" src="" alt="Capa do filme" width="160" height="240" style="object-fit: cover; border-radius: 6px; border: 1px solid #333;">
+                    <div style="flex: 1; min-width: 240px;">
+                        <h3 id="perfil-titulo" style="margin-top: 0; color: #e50914; font-size: 22px;"></h3>
+                        <p id="perfil-meta" style="color: #bbbbbb; font-size: 14px; margin: 6px 0 14px 0;"></p>
+                        <h4 style="margin: 0 0 6px 0; color: #ffffff;">Sinopse</h4>
+                        <p id="perfil-sinopse" style="color: #dddddd; line-height: 1.5; margin: 0 0 16px 0;"></p>
+                        <button type="button" id="fechar-perfil" style="background-color: #333333; color: #ffffff; border: none; padding: 8px 14px; border-radius: 4px; cursor: pointer;">Fechar perfil</button>
+                    </div>
+                </div>
             </div>
 
             <br><br>
@@ -157,6 +171,7 @@
                             <option value="Aventura">Aventura</option>
                             <option value="Aventura Épica">Aventura Épica</option>
                             <option value="Biografia">Biografia</option>
+                            <option value="Suspense">Suspense</option>
                         </select>
                     </div>
 
