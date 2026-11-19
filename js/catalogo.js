@@ -30,6 +30,63 @@ const abrirPerfilPelaGaleria = (poster) => {
     painel.scrollIntoView({ behavior: "smooth", block: "nearest" });
 };
 
+const atualizarEstiloEstrela = (botao, favoritado) => {
+    botao.dataset.favoritado = favoritado ? "true" : "false";
+    botao.textContent = favoritado ? "★" : "☆";
+    botao.style.color = favoritado ? "#ffd700" : "rgba(255, 255, 255, 0.75)";
+    botao.style.background = favoritado ? "rgba(0, 0, 0, 0.75)" : "rgba(0, 0, 0, 0.35)";
+    botao.style.borderColor = favoritado ? "#ffd700" : "rgba(255, 255, 255, 0.6)";
+};
+
+const renderizarFavoritos = () => {
+    const galeria = document.getElementById("galeria-filmes");
+    const listaFavoritos = document.getElementById("lista-favoritos");
+    const mensagemVazia = document.getElementById("mensagem-sem-favoritos");
+
+    if (!galeria || !listaFavoritos) return;
+
+    listaFavoritos.innerHTML = "";
+    const cards = galeria.querySelectorAll(".card-filme");
+    let quantidadeFavoritos = 0;
+
+    cards.forEach((card) => {
+        const botao = card.querySelector(".btn-favorito");
+        const poster = card.querySelector("img");
+        if (!botao || !poster || botao.dataset.favoritado !== "true") return;
+
+        quantidadeFavoritos += 1;
+
+        const itemFavorito = document.createElement("div");
+        itemFavorito.style.width = "120px";
+        itemFavorito.style.textAlign = "center";
+
+        const miniatura = document.createElement("img");
+        miniatura.src = poster.getAttribute("src");
+        miniatura.alt = poster.alt;
+        miniatura.width = 120;
+        miniatura.height = 180;
+        miniatura.style.objectFit = "cover";
+        miniatura.style.borderRadius = "6px";
+        miniatura.style.border = "2px solid #ffd700";
+        miniatura.style.cursor = "pointer";
+        miniatura.addEventListener("click", () => abrirPerfilPelaGaleria(poster));
+
+        const legenda = document.createElement("p");
+        legenda.textContent = poster.dataset.titulo || poster.alt;
+        legenda.style.margin = "6px 0 0 0";
+        legenda.style.fontSize = "12px";
+        legenda.style.color = "#ffffff";
+
+        itemFavorito.appendChild(miniatura);
+        itemFavorito.appendChild(legenda);
+        listaFavoritos.appendChild(itemFavorito);
+    });
+
+    if (mensagemVazia) {
+        mensagemVazia.style.display = quantidadeFavoritos === 0 ? "block" : "none";
+    }
+};
+
 const configurarCliquesGaleria = () => {
     const galeria = document.getElementById("galeria-filmes");
     const botaoFechar = document.getElementById("fechar-perfil");
@@ -43,11 +100,26 @@ const configurarCliquesGaleria = () => {
 
     if (!galeria) return;
 
+    galeria.querySelectorAll(".btn-favorito").forEach((botao) => {
+        atualizarEstiloEstrela(botao, botao.dataset.favoritado === "true");
+    });
+
     galeria.addEventListener("click", (evento) => {
+        const botaoEstrela = evento.target.closest(".btn-favorito");
+        if (botaoEstrela) {
+            evento.stopPropagation();
+            const estaFavoritado = botaoEstrela.dataset.favoritado === "true";
+            atualizarEstiloEstrela(botaoEstrela, !estaFavoritado);
+            renderizarFavoritos();
+            return;
+        }
+
         const poster = evento.target.closest("img");
         if (!poster) return;
         abrirPerfilPelaGaleria(poster);
     });
+
+    renderizarFavoritos();
 };
 
 const atualizarInterfaceComProcessamento = () => {
