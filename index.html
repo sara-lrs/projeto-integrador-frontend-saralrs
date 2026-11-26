@@ -4,32 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CineCrítica - Lançamentos e Avaliações</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/app.js" defer></script>
 </head>
 <body>
 
     <!-- Cabeçalho Principal -->
-    <header>
+    <header class="site-header">
         <h1>🎬 CineCrítica</h1>
         <p>Sua plataforma de análises e novidades do cinema</p>
     </header>
 
     <!-- Conteúdo Principal -->
-    <main>
+    <main class="container">
 
-        <!-- Seção 1: Sobre e Tabela -->
-        <section>
-            <h2>Sobre o Projeto e Lançamentos</h2>
+        <!-- Seção 1: Sobre, Tabela e Galeria -->
+        <section class="card" aria-labelledby="titulo-sobre">
+            <h2 id="titulo-sobre">Sobre o Projeto e Lançamentos</h2>
             <p>Acompanhe análises detalhadas, coberturas de grandes premiações e as principais novidades do cinema.</p>
-            
-            <ul>
+
+            <ul class="lista-destaques">
                 <li>Críticas de Lançamentos</li>
                 <li>Cobertura do Oscar e Premiações</li>
                 <li>Notícias e Bastidores</li>
             </ul>
 
             <h3>Últimas Notas da Crítica</h3>
-            <table>
+            <table class="tabela-notas">
                 <thead>
                     <tr>
                         <th scope="col">Filme</th>
@@ -49,7 +50,7 @@
             </table>
 
             <h3>Galeria de Pôsteres em Destaque</h3>
-            <div>
+            <div class="galeria-posteres">
                 <img src="assets/images/homem-aranha.jpeg" alt="Pôster promocional do filme Homem-Aranha" width="150" height="225">
                 <img src="assets/images/atvd.pj.jpg" alt="Pôster promocional de filme em destaque na galeria" width="150" height="225">
                 <img src="assets/images/atvd.pj3.jpg" alt="Pôster promocional de filme em destaque na galeria" width="150" height="225">
@@ -57,33 +58,35 @@
                 <img src="assets/images/atvd.pj5.jpg" alt="Pôster promocional de filme em destaque na galeria" width="150" height="225">
             </div>
 
-            <a href="https://www.imdb.com" target="_blank" rel="noopener noreferrer">Acesse o IMDb para conferir o banco de dados completo de filmes &rarr;</a>
+            <p class="link-externo">
+                <a href="https://www.imdb.com" target="_blank" rel="noopener noreferrer">Acesse o IMDb para conferir o banco de dados completo de filmes &rarr;</a>
+            </p>
         </section>
 
-        <!-- Seção 2: Formulário -->
-        <section>
-            <h2>Cadastre sua Avaliação de Filme</h2>
-            
-            <form action="#" method="post">
-                <fieldset>
+        <!-- Seção 2: Formulário de Avaliação -->
+        <section class="card" aria-labelledby="titulo-formulario">
+            <h2 id="titulo-formulario">Cadastre sua Avaliação de Filme</h2>
+
+            <form id="form-avaliacao" action="#" method="post" novalidate>
+                <fieldset class="fieldset-avaliacao">
                     <legend>Informações da Avaliação</legend>
-                    
-                    <div>
+
+                    <div class="campo-form">
                         <label for="email-usuario">Seu E-mail:</label>
                         <input type="email" id="email-usuario" name="email" required placeholder="seuemail@exemplo.com">
                     </div>
 
-                    <div>
+                    <div class="campo-form">
                         <label for="data-assistido">Data em que assistiu:</label>
                         <input type="date" id="data-assistido" name="data_assistido" required>
                     </div>
 
-                    <div>
+                    <div class="campo-form">
                         <label for="nota">Sua Nota (0 a 10):</label>
                         <input type="number" id="nota" name="nota" min="0" max="10" step="0.1" required placeholder="Ex: 8.5">
                     </div>
 
-                    <div>
+                    <div class="campo-form">
                         <label for="genero">Gênero do Filme:</label>
                         <select id="genero" name="genero" required>
                             <option value="">Selecione um gênero</option>
@@ -95,26 +98,37 @@
                         </select>
                     </div>
 
-                    <div>
-                        <p>Recomendaria este filme?</p>
-                        <input type="radio" id="recomendo-sim" name="recomendaria" value="sim" checked>
-                        <label for="recomendo-sim">Sim</label>
-                        <input type="radio" id="recomendo-nao" name="recomendaria" value="nao">
-                        <label for="recomendo-nao">Não</label>
+                    <div class="campo-form">
+                        <p class="rotulo-grupo">Recomendaria este filme?</p>
+                        <div class="grupo-radio">
+                            <input type="radio" id="recomendo-sim" name="recomendaria" value="sim" checked>
+                            <label for="recomendo-sim">Sim</label>
+
+                            <input type="radio" id="recomendo-nao" name="recomendaria" value="nao">
+                            <label for="recomendo-nao">Não</label>
+                        </div>
                     </div>
 
-                    <button type="submit">Enviar Avaliação</button>
+                    <p id="mensagem-feedback" class="feedback" role="status" aria-live="polite"></p>
+
+                    <button type="submit" class="btn-enviar">Enviar Avaliação</button>
                 </fieldset>
             </form>
+        </section>
+
+        <!-- Seção 3: Resumo e Avaliações Enviadas -->
+        <section class="card" aria-labelledby="titulo-resumo">
+            <h2 id="titulo-resumo">Resumo das Avaliações</h2>
+            <p id="estatisticas-avaliacoes">Nenhuma avaliação enviada nesta sessão ainda.</p>
+            <ul id="lista-avaliacoes" class="lista-avaliacoes"></ul>
         </section>
 
     </main>
 
     <!-- Rodapé -->
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2026 CineCrítica - Todos os direitos reservados.</p>
     </footer>
 
 </body>
 </html>
-
